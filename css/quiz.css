@@ -12,3 +12,41 @@ body { background-color: #fff; padding: 20px; }
    background: #000 url(../images/background.jpg) no-repeat 0px 0px;
 }
 
+
+
+#myQuiz h2 {
+  font-size: 3em;
+  margin: 0px;
+  font-weight: 100;
+}
+
+#myQuiz h3 {
+  font-size: 2.4em;
+  margin: 0px;
+  font-weight: 100;
+}
+
+#myQuiz p {
+  margin: 0px 0px 14px 0px;
+}
+
+#myQuiz .intro {
+  position: absolute;
+  top: 225px;
+  left: 660px;
+  width: 550px;
+}
+
+#myQuiz .intro p{
+  margin: 0px 0px 14px 0px;
+}
+
+#myQuiz .btn {
+  display: inline-block;
+  cursor: pointer;
+  background-color: #c04b01;
+  color: white;
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 6px;
+}
