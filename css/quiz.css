@@ -120,3 +120,14 @@ body { background-color: #fff; padding: 20px; }
   background-image: url(../images/icon_correct.svg);
 }
 
+#myQuiz .question.unanswered .ans {
+  cursor: pointer;
+}
+
+#myQuiz .question.unanswered .ans:hover {
+  background-color: rgba(238, 189, 102,.2);
+}
+
+#myQuiz .question.answered .ans {
+  cursor: default;
+}
