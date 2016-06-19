@@ -12,7 +12,23 @@ body { background-color: #fff; padding: 20px; }
    background: #000 url(../images/background.jpg) no-repeat 0px 0px;
 }
 
+#myQuiz h1 {
+  font-size: 2em;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin: 0px;
+  position: absolute;
+  top: 25px;
+  left: 36px;
+}
 
+#myQuiz h1 span {
+  display: block;
+  font-weight: 900;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 3.2em;
+  line-height: 65px;
+}
 
 #myQuiz h2 {
   font-size: 3em;
