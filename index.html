@@ -15,7 +15,7 @@
 			<div class="intro {{(activeQuestion > -1) ? 'inactive' : 'active' }}">
 				<h2>Welcome</h2>
 				<p>Click begin to test your knowledge</p>
-				<p class='btn' ng-click="activeQuestion = 1">Begin</p>
+				<p class='btn' ng-click="activeQuestion = 0">Begin</p>
 			</div>
 			<div class="question
 				{{ myQuestion.questionState === 'Answered'  ? 'answered' : 'unanswered'}}
@@ -35,10 +35,10 @@
 					 ng-repeat="Answer in myQuestions[$index].answers">{{Answer.text}}
 				</p>
 				<div class="feedback">
-					<p>You are <strong>Correct</strong></p>
-					<p>Oops! That it's not correct</p>
-					<p>Aditional Feedback</p>
-					<p class='btn'>Continue</p>
+					<p ng-show="myQuestion.correctness === 'correct'">You are <strong>Correct</strong></p>
+					<p ng-show="myQuestion.correctness === 'incorrect'">Oops! That it's not correct</p>
+					<p>{{ myQuestion.feedback}}</p>
+					<p class='btn' ng-click="selectContinue()">Continue</p>
 				</div>
 			</div>
 			<div class='results'>
