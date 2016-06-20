@@ -46,11 +46,9 @@
 			<div class="results
 				{{ totalQuestions === activeQuestion ? 'active' : 'inactive'}}"">
 				<h3>Results</h3>
-				<p>You scored {{porcentage}}% by correctly answering {{score}} of the total {{totalQuestions}} questions</p>
+				<p>You scored {{percentage}}% by correctly answering {{score}} of the total {{totalQuestions}} questions</p>
 				<p>Use the links below to challenge your friends</p>
-				<div class="share">
-					<a class='btn email' href="#">Email</a>
-					<a class='btn twitter' href="#">Tweet</a>
+				<div class="share" ng-bind-html="createShareLinks(percentage)">
 				</div>
 			</div>
 		</div>

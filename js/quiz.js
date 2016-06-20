@@ -31,7 +31,7 @@
         $scope.myQuestions[qIndex].questionState = 'Answered'
       }
 
-      $scope.porcentage = (($scope.score / $scope.totalQuestions) * 100).toFixed(1)
+      $scope.percentage = (($scope.score / $scope.totalQuestions) * 100).toFixed(1)
     }
 
     $scope.isSelected = function(qIndex, aIndex) {
@@ -46,6 +46,44 @@
       return $scope.activeQuestion += 1
     }
 
+    $scope.createShareLinks = function(percentage) {
+      var url = 'http://makeitreal.camp'
+
+      var emailLInk = "<a class='btn email' href='mailto:?subject=Try to beat my quiz socre!&amp;body=I scored a "+percentage+"% on this quiz about Saturn. Try to beat my score at " + url + "'>Email a Friend</a>"
+
+      var twitterLink = "<a class='btn twitter' target='_blank' href='http://twitter.com/share?text=I scored a"+percentage+"&amp;'>Tweet my Score</a>"
+
+      var newMarkup = emailLInk + twitterLink
+
+      return $sce.trustAsHtml(newMarkup)
+    }
+
  }])
 
 })();
+
+
+$(document).ready(function() {
+  var cont = 0;
+
+  $("#add").click(function(){
+
+    $('ul').append(' <li class="elements">Elemento '  + cont +' </li>');
+    cont=cont+1;
+
+    $("li").click(function(){
+      console.log(this)
+      if ($(this).hasClass('marked')) {
+        $(this).removeClass('marked');
+      } else {
+        $(this).addClass('marked') ;
+      }
+
+    });
+
+  });
+
+});
+
+
+
