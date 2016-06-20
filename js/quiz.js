@@ -6,7 +6,6 @@
 
     $scope.score = 0
     $scope.activeQuestion = -1
-    $scope.activeQuestionAnswered = 0
     $scope.percentage = 0
 
     $http.get('quiz_data.json')
@@ -31,6 +30,8 @@
 
         $scope.myQuestions[qIndex].questionState = 'Answered'
       }
+
+      $scope.porcentage = (($scope.score / $scope.totalQuestions) * 100).toFixed(1)
     }
 
     $scope.isSelected = function(qIndex, aIndex) {

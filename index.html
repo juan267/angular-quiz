@@ -43,9 +43,10 @@
 					<p class='btn' ng-click="selectContinue()">Continue</p>
 				</div>
 			</div>
-			<div class='results'>
+			<div class="results
+				{{ totalQuestions === activeQuestion ? 'active' : 'inactive'}}"">
 				<h3>Results</h3>
-				<p>You scored x% by correctly answeign x of the total x questions</p>
+				<p>You scored {{porcentage}}% by correctly answering {{score}} of the total {{totalQuestions}} questions</p>
 				<p>Use the links below to challenge your friends</p>
 				<div class="share">
 					<a class='btn email' href="#">Email</a>
