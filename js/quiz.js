@@ -16,8 +16,31 @@
       })
 
     $scope.selectedAnswer = function(qIndex, aIndex) {
-      console.log(qIndex, aIndex)
+      var questionState = $scope.myQuestions[qIndex].questionState
+
+      if (questionState !== 'Answered') {
+        $scope.myQuestions[qIndex].selectedAnswer = aIndex
+        var correctAnswer = $scope.myQuestions[qIndex].correct
+        $scope.myQuestions[qIndex].correctAnswer = correctAnswer
+        if (aIndex === correctAnswer) {
+          $scope.score++
+          $scope.myQuestions[qIndex].correctness = 'correct'
+        } else {
+          $scope.myQuestions[qIndex].correctness = 'incorrect'
+        }
+
+        $scope.myQuestions[qIndex].questionState = 'Answered'
+      }
     }
+
+    $scope.isSelected = function(qIndex, aIndex) {
+      return $scope.myQuestions[qIndex].selectedAnswer === aIndex
+    }
+
+    $scope.isCorrect = function(qIndex, aIndex) {
+      return $scope.myQuestions[qIndex].correctAnswer === aIndex
+    }
+
  }])
 
 })();
